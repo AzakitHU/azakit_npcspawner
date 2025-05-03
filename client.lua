@@ -9,7 +9,7 @@ CreateThread(function()
             Wait(10)
         end
 
-        local spawnZ = npc.coords.z - 1.0 -- talaj szintre helyezés
+        local spawnZ = npc.coords.z - 1.0
         local ped = CreatePed(4, model, npc.coords.x, npc.coords.y, spawnZ, npc.coords.w, false, true)
         SetEntityAsMissionEntity(ped, true, true)
         SetBlockingOfNonTemporaryEvents(ped, true)
@@ -27,7 +27,7 @@ CreateThread(function()
     end
 end)
 
--- 3D text megjelenítése 5 méteren belül
+-- 3D text
 CreateThread(function()
     while true do
         local playerCoords = GetEntityCoords(PlayerPedId())
@@ -45,7 +45,6 @@ CreateThread(function()
     end
 end)
 
--- 3D text kirajzolás
 function Draw3DText(coords, text)
     local s = Config.TextSettings
     local onScreen, _x, _y = World3dToScreen2d(coords.x, coords.y, coords.z + 1.0)
